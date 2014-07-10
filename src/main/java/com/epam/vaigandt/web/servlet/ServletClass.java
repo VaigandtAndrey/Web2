@@ -10,12 +10,12 @@ public class ServletClass extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String text = request.getParameter("text");
-        request.setAttribute("text", text.toUpperCase());
+        request.setAttribute("text", text);
         request.getRequestDispatcher("/result.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/input.jsp").forward(request, response);
-       // request.getParameter("FormFoText");
+     //  request.getParameter("text");
     }
 }
